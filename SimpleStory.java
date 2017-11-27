@@ -14,25 +14,49 @@ public class SimpleStory {
 	    adjective - A description used to modify or describe a noun
 	    */
 		
+		System.out.print("How old are you? ");
+		userScan.nextLine();
+		int age = 17;
+		if (age < 17) {
+			System.out.print("Sorry you must be at least 17 to use this program.\n");
+		    System.exit(0);
+		} else { System.out.print("Well let's tell a story....\n");}
+		
+		
 		String name;
 		String verb;
 		String adjective;
+		String noun;
+		String adverb;
 		
 		
-		System.out.print("What is your name?  ");
+		System.out.print("Enter your name?  ");
 		name = userScan.nextLine();
-		System.out.printf("Give me a verb %s. ", name);
-		verb = userScan.nextLine();
-		System.out.printf("Now give me an adjective. ");
+		System.out.printf("Enter an adjective. ");
 		adjective = userScan.nextLine();
+		do {
+		System.out.printf("Enter an noun. ");
+		noun = userScan.nextLine();
+		if (noun.equalsIgnoreCase("jerkface")||
+				noun.equalsIgnoreCase("dorkhead")||
+				noun.equalsIgnoreCase("nerdhead")||
+				noun.equalsIgnoreCase("geekface")) {
+			System.out.print("That language is not allowed. Try again. \n\n");
+		}
+		} while (noun.equalsIgnoreCase("jerkface")||
+				noun.equalsIgnoreCase("dorkhead")||
+				noun.equalsIgnoreCase("nerdhead")||
+				noun.equalsIgnoreCase("geekface"));
+		System.out.printf("Enter an adverb. ");
+		adverb = userScan.nextLine();
+		System.out.print("Enter a verb. ");
+		verb = userScan.nextLine();
 		
-		System.out.printf("Ok I think I got enough information, I gotta story to tell about this"
-				+ " %s.\n", name);
 		
-		System.out.printf("Do you know %s? ", name);
-		System.out.printf("Just one of the most amazing persons you will ever meet, they are %s\n ", adjective + " on the inside and out."); 
-		System.out.printf("The only problem they have is %s", verb
-		+ ", just never saw the point in it.");
+		System.out.printf("Ok time for your simple story \n-------------------\n");
+		System.out.printf("%s is a(n) %s %s. ", name, adjective, noun);
+		
+		System.out.printf("They are always %s %s. \n", adverb, verb);
     
 	}
 
